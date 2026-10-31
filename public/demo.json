@@ -6,310 +6,310 @@
   "coverage": "Invented conversations demonstrate pins, project selection, multiple approvals, replacement, and undo. No personal chat data is included.",
   "chats": [
     {
-      "id": "demo-api-release",
-      "title": "Ship API v2",
+      "id": "demo-overnight-backup",
+      "title": "Fix the overnight backup",
       "source": "codex",
       "pinned": true,
       "pinOrder": 0,
       "project": {
-        "id": "demo-project-api",
-        "name": "API platform"
+        "id": "demo-project-backup",
+        "name": "Computer upkeep"
       },
       "updatedAt": "2026-10-29T12:00:00.000Z",
-      "summary": "Versioned routes and migration notes are ready. Breaking changes need a final review.",
-      "nextStep": "Approve the breaking changes before release.",
+      "summary": "The backup was starting before the external drive was ready. The script now waits for it.",
+      "nextStep": "Turn the nightly schedule back on?",
       "evidence": "Fictional demonstration content. No personal account or real conversation is connected.",
       "approval": {
         "state": "waiting",
-        "summary": "Approve the breaking changes before release.",
+        "summary": "Turn the nightly schedule back on?",
         "checkedAt": "2026-10-29T12:00:00Z"
       },
-      "handoff": "The v2 routes and migration guide are ready in the preview branch. Contract tests pass. Review the removed fields and the migration notes before releasing the new version."
+      "handoff": "The script now checks that the external drive is mounted before it starts copying. A manual test finished, and a sample file opened from the backup. The nightly schedule is still off; review the change before turning it back on."
     },
     {
-      "id": "demo-queue",
-      "title": "Choose the job queue",
+      "id": "demo-portfolio",
+      "title": "Finish my portfolio site",
       "source": "chatgpt",
       "pinned": false,
       "pinOrder": 999,
       "project": {
-        "id": "demo-project-jobs",
-        "name": "Background jobs"
+        "id": "demo-project-website",
+        "name": "Personal website"
       },
       "updatedAt": "2026-10-29T11:00:00.000Z",
-      "summary": "The retry and scheduling requirements are mapped out. Two queue options fit.",
-      "nextStep": "Choose Redis-backed jobs or a managed queue.",
+      "summary": "The project pages work on mobile now. The new homepage is ready to preview.",
+      "nextStep": "Publish the new homepage?",
       "evidence": "Fictional demonstration content. No personal account or real conversation is connected.",
       "approval": {
         "state": "waiting",
-        "summary": "Choose Redis-backed jobs or a managed queue.",
+        "summary": "Publish the new homepage?",
         "checkedAt": "2026-10-29T12:00:00Z"
       },
-      "handoff": "The comparison covers retries, scheduled jobs, and operational overhead. Redis fits the existing stack; the managed option removes worker maintenance. Choose one before implementation starts."
+      "handoff": "The project cards no longer overflow on a phone, and the homepage draft is in the local preview. Read the intro and check the project links. Nothing has been published yet."
     },
     {
-      "id": "demo-devtool-launch",
-      "title": "Launch the devtool",
+      "id": "demo-lisbon-weekend",
+      "title": "A long weekend in Lisbon",
       "source": "chatgpt",
       "pinned": true,
       "pinOrder": 2,
       "project": {
-        "id": "demo-project-launch",
-        "name": "Devtool launch"
+        "id": "demo-project-travel",
+        "name": "Travel plans"
       },
       "updatedAt": "2026-10-29T10:00:00.000Z",
-      "summary": "The landing page and quickstart are ready. The launch copy needs your sign-off.",
-      "nextStep": "Review the launch copy before publishing.",
+      "summary": "The four-day plan is drafted. A day in Sintra fits if we drop one afternoon in the city.",
+      "nextStep": "Include Sintra or keep all four days in Lisbon?",
       "evidence": "Fictional demonstration content. No personal account or real conversation is connected.",
       "approval": {
         "state": "waiting",
-        "summary": "Review the launch copy before publishing.",
+        "summary": "Include Sintra or keep all four days in Lisbon?",
         "checkedAt": "2026-10-29T12:00:00Z"
       },
-      "handoff": "The landing page explains the problem, shows the CLI, and links to the quickstart. The announcement is drafted. Review the headline and installation steps before anything goes live."
+      "handoff": "The draft leaves the arrival day light and groups the city stops by neighborhood. There is an optional day in Sintra, but it replaces an afternoon in Lisbon. Decide whether to include it before finalizing the plan. Nothing is booked."
     },
     {
-      "id": "demo-worker-retries",
-      "title": "Design worker retries",
+      "id": "demo-portfolio-mobile",
+      "title": "Why is my site weird on mobile?",
       "source": "codex",
       "pinned": false,
       "pinOrder": 999,
       "project": {
-        "id": "demo-project-jobs",
-        "name": "Background jobs"
+        "id": "demo-project-website",
+        "name": "Personal website"
       },
       "updatedAt": "2026-10-29T09:00:00.000Z",
-      "summary": "The retry policy uses backoff and a dead-letter queue. Duplicate jobs still need a test.",
+      "summary": "A fixed-width project card is pushing the page sideways. The CSS change is ready.",
       "evidence": "Fictional demonstration content. No personal account or real conversation is connected.",
       "approval": {
         "state": "unknown"
       },
-      "handoff": "The worker design covers backoff, timeouts, and failed jobs. Add an idempotency test before choosing the queue implementation."
+      "handoff": "The project cards had a fixed minimum width. The proposed CSS lets them shrink on smaller screens. Check the local preview on a phone before using it in the homepage update."
     },
     {
-      "id": "demo-auth-debug",
-      "title": "Debug the auth flow",
+      "id": "demo-mcp-explained",
+      "title": "What does MCP actually do?",
       "source": "chatgpt",
       "pinned": true,
       "pinOrder": 4,
       "project": null,
       "updatedAt": "2026-10-29T08:00:00.000Z",
-      "summary": "The redirect loop comes from an expired session cookie. A fix is ready to test.",
+      "summary": "We walked through a weather-tool example. Next: how this differs from calling an API directly.",
       "evidence": "Fictional demonstration content. No personal account or real conversation is connected.",
       "approval": {
         "state": "unknown"
       },
-      "handoff": "The callback handler now clears expired cookies before redirecting. Check login, logout, and expired-session behavior in a fresh browser session."
+      "handoff": "The explanation follows one fictional request: ask about the weather, call a tool, then use the result in an answer. The next question was where MCP fits compared with calling the same API directly. Start with that comparison."
     },
     {
-      "id": "demo-agent-evals",
-      "title": "Run the agent evals",
+      "id": "demo-login-loop",
+      "title": "Why am I logged out again?",
       "source": "chatgpt",
       "pinned": true,
       "pinOrder": 5,
       "project": null,
       "updatedAt": "2026-10-29T07:00:00.000Z",
-      "summary": "The baseline is saved. Three tool-selection failures need a closer look.",
+      "summary": "The session expires when the laptop sleeps. There is a fix to try in the callback handler.",
       "evidence": "Fictional demonstration content. No personal account or real conversation is connected.",
       "approval": {
         "state": "unknown"
       },
-      "handoff": "The evaluation run is complete and the failing cases are isolated. Inspect the three incorrect tool choices before changing the prompt."
+      "handoff": "The test login works until the laptop sleeps long enough for the session to expire. The proposed fix checks the session on return. Try the sleep-and-wake case again before treating it as resolved."
     },
     {
-      "id": "demo-cli",
-      "title": "Build the CLI",
+      "id": "demo-monday-demo",
+      "title": "Get ready for Monday’s demo",
+      "source": "codex",
+      "pinned": false,
+      "pinOrder": 999,
+      "project": {
+        "id": "demo-project-work",
+        "name": "Work notes"
+      },
+      "updatedAt": "2026-10-29T06:00:00.000Z",
+      "summary": "The walkthrough is down to five minutes. Still need an example for the search feature.",
+      "evidence": "Fictional demonstration content. No personal account or real conversation is connected.",
+      "approval": {
+        "state": "unknown"
+      },
+      "handoff": "The notes now cover the problem, the main flow, and one useful result. The search section still has a placeholder. Add a realistic query and rehearse the walkthrough once."
+    },
+    {
+      "id": "demo-monitor",
+      "title": "Help me pick a monitor",
+      "source": "chatgpt",
+      "pinned": false,
+      "pinOrder": 999,
+      "project": {
+        "id": "demo-project-desk",
+        "name": "Desk setup"
+      },
+      "updatedAt": "2026-10-29T05:00:00.000Z",
+      "summary": "Narrowed it down to a 27-inch screen or an ultrawide. Need to measure the desk first.",
+      "evidence": "Fictional demonstration content. No personal account or real conversation is connected.",
+      "approval": {
+        "state": "unknown"
+      },
+      "handoff": "The shortlist focuses on readable text and enough room for two windows. Measure the usable desk width and depth before comparing the two sizes again."
+    },
+    {
+      "id": "demo-weeknight-dinners",
+      "title": "A week of easy dinners",
+      "source": "chatgpt",
+      "pinned": false,
+      "pinOrder": 999,
+      "project": {
+        "id": "demo-project-meals",
+        "name": "Meal planning"
+      },
+      "updatedAt": "2026-10-29T04:00:00.000Z",
+      "summary": "Five dinners and a shared grocery list are ready. Wednesday needs to take less than 20 minutes.",
+      "evidence": "Fictional demonstration content. No personal account or real conversation is connected.",
+      "approval": {
+        "state": "unknown"
+      },
+      "handoff": "The draft reuses ingredients across five dinners so the grocery list stays short. Wednesday’s recipe takes too long. Swap it for something quick, then check what is already in the pantry."
+    },
+    {
+      "id": "demo-script-cli",
+      "title": "Turn my script into a CLI",
       "source": "codex",
       "pinned": false,
       "pinOrder": 999,
       "project": {
         "id": "demo-project-cli",
-        "name": "Developer tools"
-      },
-      "updatedAt": "2026-10-29T06:00:00.000Z",
-      "summary": "The init command works. Next up: useful errors and a dry-run flag.",
-      "evidence": "Fictional demonstration content. No personal account or real conversation is connected.",
-      "approval": {
-        "state": "unknown"
-      },
-      "handoff": "The CLI creates a project from the starter template. Add a dry-run option and replace raw stack traces with actionable error messages."
-    },
-    {
-      "id": "demo-search",
-      "title": "Tune semantic search",
-      "source": "chatgpt",
-      "pinned": false,
-      "pinOrder": 999,
-      "project": {
-        "id": "demo-project-search",
-        "name": "Search"
-      },
-      "updatedAt": "2026-10-29T05:00:00.000Z",
-      "summary": "The retrieval benchmark is ready. Compare relevance before changing the index.",
-      "evidence": "Fictional demonstration content. No personal account or real conversation is connected.",
-      "approval": {
-        "state": "unknown"
-      },
-      "handoff": "The benchmark includes exact-match and paraphrased queries. Run both retrieval settings against it and review the misses before rebuilding the index."
-    },
-    {
-      "id": "demo-onboarding",
-      "title": "Fix onboarding drop-off",
-      "source": "chatgpt",
-      "pinned": false,
-      "pinOrder": 999,
-      "project": {
-        "id": "demo-project-onboarding",
-        "name": "Onboarding"
-      },
-      "updatedAt": "2026-10-29T04:00:00.000Z",
-      "summary": "The setup flow is down to three steps. The empty state still needs a pass.",
-      "evidence": "Fictional demonstration content. No personal account or real conversation is connected.",
-      "approval": {
-        "state": "unknown"
-      },
-      "handoff": "Account creation and the first project now fit into three steps. Review the empty state so a new user knows what to do after setup."
-    },
-    {
-      "id": "demo-webhooks",
-      "title": "Make webhooks reliable",
-      "source": "codex",
-      "pinned": false,
-      "pinOrder": 999,
-      "project": {
-        "id": "demo-project-integrations",
-        "name": "Integrations"
+        "name": "Side project"
       },
       "updatedAt": "2026-10-29T03:00:00.000Z",
-      "summary": "Signature checks pass. Retry handling and duplicate events are covered.",
+      "summary": "The command runs from Terminal. Next: show a useful message when the input file is missing.",
       "evidence": "Fictional demonstration content. No personal account or real conversation is connected.",
       "approval": {
         "state": "unknown"
       },
-      "handoff": "The receiver verifies signatures and ignores duplicate event IDs. Test a delayed event and a temporary downstream failure before deploying."
+      "handoff": "The script now accepts a file path as an argument. It works with the sample file, but a missing file still produces a stack trace. Add a readable error message and a help command."
     },
     {
-      "id": "demo-changelog",
-      "title": "Write the changelog",
+      "id": "demo-workshop",
+      "title": "Plan a beginner workshop",
       "source": "chatgpt",
       "pinned": false,
       "pinOrder": 999,
       "project": {
-        "id": "demo-project-releases",
-        "name": "Release notes"
+        "id": "demo-project-workshop",
+        "name": "Workshop"
       },
       "updatedAt": "2026-10-29T02:00:00.000Z",
-      "summary": "The release notes are drafted. Breaking changes now have migration examples.",
+      "summary": "The outline has one short explanation and a hands-on exercise. The exercise needs a test run.",
       "evidence": "Fictional demonstration content. No personal account or real conversation is connected.",
       "approval": {
         "state": "unknown"
       },
-      "handoff": "The changelog groups fixes, new features, and breaking changes. Check each migration example against the current API before tagging the release."
+      "handoff": "The workshop starts with an example, then gives people a small task to try. Run through the exercise from a fresh setup to see where someone might get stuck."
     },
     {
-      "id": "demo-schema",
-      "title": "Review the schema",
+      "id": "demo-bookshelves",
+      "title": "Will these shelves fit?",
       "source": "chatgpt",
       "pinned": false,
       "pinOrder": 999,
       "project": {
-        "id": "demo-project-data",
-        "name": "Data layer"
+        "id": "demo-project-home",
+        "name": "Apartment"
       },
       "updatedAt": "2026-10-29T01:00:00.000Z",
-      "summary": "The migration runs in staging. Check the rollback before production.",
+      "summary": "The width works, but the door might hit the lower shelf. Need to check the clearance.",
       "evidence": "Fictional demonstration content. No personal account or real conversation is connected.",
       "approval": {
         "state": "unknown"
       },
-      "handoff": "The new columns and backfill have been tested in staging. Review lock duration and exercise the rollback using representative data."
+      "handoff": "The sketch fits the shelves along the wall. Before choosing a depth, measure how far the door swings into that space. The current plan does not account for it."
     },
     {
-      "id": "demo-observability",
-      "title": "Trace the slow requests",
+      "id": "demo-csv-chart",
+      "title": "Make sense of this CSV",
       "source": "codex",
       "pinned": false,
       "pinOrder": 999,
       "project": {
-        "id": "demo-project-observability",
-        "name": "Observability"
+        "id": "demo-project-charts",
+        "name": "Weekend project"
       },
       "updatedAt": "2026-10-29T00:00:00.000Z",
-      "summary": "The trace points to repeated database calls. The batching fix is ready.",
+      "summary": "The dates parse correctly now. Two rows have missing values and need checking.",
       "evidence": "Fictional demonstration content. No personal account or real conversation is connected.",
       "approval": {
         "state": "unknown"
       },
-      "handoff": "The slow endpoint makes one database request per item. The patch batches those reads. Compare latency and query counts before merging."
+      "handoff": "The chart now sorts the dates correctly instead of treating them as text. Two rows are missing values. Check the original file before deciding whether to leave gaps or remove those rows."
     },
     {
-      "id": "demo-api-contract",
-      "title": "Map the API changes",
+      "id": "demo-backup-check",
+      "title": "Is my backup actually usable?",
       "source": "chatgpt",
       "pinned": false,
       "pinOrder": 999,
       "project": {
-        "id": "demo-project-api",
-        "name": "API platform"
+        "id": "demo-project-backup",
+        "name": "Computer upkeep"
       },
       "updatedAt": "2026-10-28T23:00:00.000Z",
-      "summary": "The endpoint inventory is complete. Removed fields are marked for migration.",
+      "summary": "The restore checklist is written. It starts with opening a copied file from a separate folder.",
       "evidence": "Fictional demonstration content. No personal account or real conversation is connected.",
       "approval": {
         "state": "unknown"
       },
-      "handoff": "The contract review identified the fields being removed in v2. Use this inventory to check the migration guide and compatibility tests."
+      "handoff": "The checklist covers locating a backup, copying a file to a temporary folder, and opening it. It is a plan for checking the backup, not proof that every file can be restored."
     },
     {
-      "id": "demo-positioning",
-      "title": "Position the devtool",
+      "id": "demo-trip-ideas",
+      "title": "Where should we go for four days?",
       "source": "chatgpt",
       "pinned": false,
       "pinOrder": 999,
       "project": {
-        "id": "demo-project-launch",
-        "name": "Devtool launch"
+        "id": "demo-project-travel",
+        "name": "Travel plans"
       },
       "updatedAt": "2026-10-28T22:00:00.000Z",
-      "summary": "The audience and core use case are defined. The headline focuses on local development.",
+      "summary": "Lisbon made the shortlist. The next conversation builds a plan with time to wander.",
       "evidence": "Fictional demonstration content. No personal account or real conversation is connected.",
       "approval": {
         "state": "unknown"
       },
-      "handoff": "The positioning draft targets developers working with local services. Turn the agreed use case into a concrete landing-page example."
+      "handoff": "The trip ideas favored one city over several stops. Lisbon was chosen for the fictional itinerary, with a possible day trip left open. Dates and bookings have not been set."
     },
     {
-      "id": "demo-activation",
-      "title": "Map the first-run flow",
+      "id": "demo-meal-ideas",
+      "title": "What can I cook after work?",
       "source": "codex",
       "pinned": false,
       "pinOrder": 999,
       "project": {
-        "id": "demo-project-onboarding",
-        "name": "Onboarding"
+        "id": "demo-project-meals",
+        "name": "Meal planning"
       },
       "updatedAt": "2026-10-28T21:00:00.000Z",
-      "summary": "The first-run journey is mapped from sign-up to a successful first request.",
+      "summary": "Collected quick dinner ideas that share ingredients. Next: put five into a weekly plan.",
       "evidence": "Fictional demonstration content. No personal account or real conversation is connected.",
       "approval": {
         "state": "unknown"
       },
-      "handoff": "The flow identifies where users need a sample project, credentials, and feedback. Use it to simplify the setup screens."
+      "handoff": "The ideas include a tray bake, noodles, soup, and a couple of meals using leftovers. Pick five and combine the ingredients into one grocery list."
     },
     {
-      "id": "demo-terminal",
-      "title": "Compare terminal themes",
+      "id": "demo-keyboard",
+      "title": "Why is this keyboard so loud?",
       "source": "chatgpt",
       "pinned": false,
       "pinOrder": 999,
       "project": null,
       "updatedAt": "2026-10-28T20:00:00.000Z",
-      "summary": "An unpinned, unfiled chat that should not appear on the shelf.",
+      "summary": "A quick comparison of switch types and ways to reduce desk noise.",
       "evidence": "Fictional demonstration content. No personal account or real conversation is connected.",
       "approval": {
         "state": "unknown"
       },
-      "handoff": "A fictional unfiled conversation, excluded from the curated demo shelf."
+      "handoff": "This fictional unpinned, unfiled conversation stays outside the curated demo shelf."
     }
   ]
 }
