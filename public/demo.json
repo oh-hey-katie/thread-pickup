@@ -48,8 +48,8 @@
       "handoff": "The project cards no longer overflow on a phone, and the homepage draft is in the local preview. Read the intro and check the project links. Nothing has been published yet."
     },
     {
-      "id": "demo-lisbon-weekend",
-      "title": "A long weekend in Lisbon",
+      "id": "demo-weekend-road-trip",
+      "title": "Plan a weekend road trip",
       "source": "chatgpt",
       "pinned": true,
       "pinOrder": 2,
@@ -58,15 +58,15 @@
         "name": "Travel plans"
       },
       "updatedAt": "2026-10-29T10:00:00.000Z",
-      "summary": "The four-day plan is drafted. A day in Sintra fits if we drop one afternoon in the city.",
-      "nextStep": "Include Sintra or keep all four days in Lisbon?",
+      "summary": "The route has two stops and a short hike. Still deciding whether to camp or find a cheap room.",
+      "nextStep": "Plan for camping or a budget room?",
       "evidence": "Fictional demonstration content. No personal account or real conversation is connected.",
       "approval": {
         "state": "waiting",
-        "summary": "Include Sintra or keep all four days in Lisbon?",
+        "summary": "Plan for camping or a budget room?",
         "checkedAt": "2026-10-29T12:00:00Z"
       },
-      "handoff": "The draft leaves the arrival day light and groups the city stops by neighborhood. There is an optional day in Sintra, but it replaces an afternoon in Lisbon. Decide whether to include it before finalizing the plan. Nothing is booked."
+      "handoff": "The draft route keeps the driving short and leaves time for a hike. There are two overnight options: a campsite or a budget room. Pick one, then check availability and the weather. Nothing is booked."
     },
     {
       "id": "demo-portfolio-mobile",
@@ -88,18 +88,18 @@
     },
     {
       "id": "demo-mcp-explained",
-      "title": "What does MCP actually do?",
+      "title": "How do MCP tool calls reach my app?",
       "source": "chatgpt",
       "pinned": true,
       "pinOrder": 4,
       "project": null,
       "updatedAt": "2026-10-29T08:00:00.000Z",
-      "summary": "We walked through a weather-tool example. Next: how this differs from calling an API directly.",
+      "summary": "Traced a request from the model to a local tool. Next: where validation and error handling belong.",
       "evidence": "Fictional demonstration content. No personal account or real conversation is connected.",
       "approval": {
         "state": "unknown"
       },
-      "handoff": "The explanation follows one fictional request: ask about the weather, call a tool, then use the result in an answer. The next question was where MCP fits compared with calling the same API directly. Start with that comparison."
+      "handoff": "The walkthrough follows a fictional tool call from the model through the client to a local server and back. The next question is how to validate arguments and return useful errors when the tool fails. Continue with a small request-and-response example."
     },
     {
       "id": "demo-login-loop",
@@ -262,7 +262,7 @@
     },
     {
       "id": "demo-trip-ideas",
-      "title": "Where should we go for four days?",
+      "title": "Where can we drive for a weekend?",
       "source": "chatgpt",
       "pinned": false,
       "pinOrder": 999,
@@ -271,12 +271,12 @@
         "name": "Travel plans"
       },
       "updatedAt": "2026-10-28T22:00:00.000Z",
-      "summary": "Lisbon made the shortlist. The next conversation builds a plan with time to wander.",
+      "summary": "Picked a short route with a couple of stops. The next conversation works out where to stay.",
       "evidence": "Fictional demonstration content. No personal account or real conversation is connected.",
       "approval": {
         "state": "unknown"
       },
-      "handoff": "The trip ideas favored one city over several stops. Lisbon was chosen for the fictional itinerary, with a possible day trip left open. Dates and bookings have not been set."
+      "handoff": "The fictional trip plan favors a short drive and time outside over a packed itinerary. A route with two stops is sketched out. Dates and overnight arrangements are still open."
     },
     {
       "id": "demo-meal-ideas",
