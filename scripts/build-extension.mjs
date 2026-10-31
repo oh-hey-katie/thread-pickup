@@ -1,0 +1,16 @@
+import {cp,mkdir,rm,readFile,readdir} from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
+import path from 'node:path';
+import './build.mjs';
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const out = path.join(root,'extension-dist');
+const files = ['manifest.json','discovery.js','capture.js','observe.js','sync-model.js','background.js'];
+const entries = await readdir(path.join(root,'extension'));
+if (entries.some(f=>![...files,'model.js'].includes(f))) throw new Error('Unexpected extension source; review before packaging.');
+await rm(out,{recursive:true,force:true});
+await mkdir(out,{recursive:true});
+await cp(path.join(root,'dist'),out,{recursive:true});
+for(const file of files) await cp(path.join(root,'extension',file),path.join(out,file));
+const manifest = JSON.parse(await readFile(path.join(out,'manifest.json'),'utf8'));
+if (manifest.permissions.join() !== 'storage' || manifest.content_scripts[0].matches.join() !== 'https://chatgpt.com/*') throw new Error('Unexpected extension access.');
+console.log('Built extension-dist/: load this folder in Chrome. No private snapshots or credentials included.');

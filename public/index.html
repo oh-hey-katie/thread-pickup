@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2924c9">
+  <meta name="description" content="A visual home for pinned conversations and the latest chat in each project.">
+  <title>thread pickup — Your conversation home</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#board">Skip to conversations</a>
+  <main class="app">
+    <header class="masthead">
+      <div class="brand">
+        <h1 class="wordmark">thread pickup</h1>
+        <svg class="jacks-mark" viewBox="0 0 120 72" role="img" aria-labelledby="jacks-title">
+          <title id="jacks-title">A red rubber ball and two silver playing jacks</title>
+          <defs>
+            <radialGradient id="ball-ink" cx="32%" cy="25%" r="75%"><stop stop-color="#ff866d"/><stop offset=".46" stop-color="#f34b3d"/><stop offset="1" stop-color="#c32440"/></radialGradient>
+            <linearGradient id="jack-metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff9dd"/><stop offset=".48" stop-color="#e1e6f4"/><stop offset="1" stop-color="#859bc8"/></linearGradient>
+            <g id="playing-jack" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M-15-10L15 10M-15 10L15-10" stroke="#161771" stroke-width="7"/>
+              <path d="M-15-10L15 10M-15 10L15-10" stroke="url(#jack-metal)" stroke-width="5"/>
+              <path d="M0-20L3-4L2 17L0 21L-2 17L-3-4Z" fill="url(#jack-metal)" stroke="#e7e8ef" stroke-width=".7"/>
+              <g fill="url(#jack-metal)" stroke="#f9f4e5" stroke-width=".7">
+                <circle cx="-15" cy="-10" r="4"/><circle cx="15" cy="10" r="4"/>
+                <circle cx="-15" cy="10" r="4"/><circle cx="15" cy="-10" r="4"/>
+              </g>
+              <path d="M-12-10L-4-4M4 4L12 10M0-14L0-5" fill="none" stroke="#fffbe8" stroke-width="1.1"/>
+            </g>
+          </defs>
+          <ellipse cx="23" cy="62" rx="17" ry="3" fill="#151571" opacity=".28"/>
+          <circle cx="23" cy="42" r="18" fill="url(#ball-ink)" stroke="#ff8066" stroke-width=".8"/>
+          <path d="M12 37Q13 29 21 28" fill="none" stroke="#ffc0a1" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M9 19Q13 10 23 9M29 9L33 10" fill="none" stroke="#f6edce" stroke-width="1.3" stroke-linecap="round" opacity=".8"/>
+          <use href="#playing-jack" transform="translate(65 29) rotate(-16)"/>
+          <use href="#playing-jack" transform="translate(94 52) rotate(18) scale(.85)"/>
+        </svg>
+        <p class="brand-subtext"><span>where your chats left off</span></p>
+      </div>
+      <div class="header-actions">
+        <button id="hidden-button" class="quiet-button">Hidden <span id="hidden-count">0</span></button>
+        <button id="source-button" class="quiet-button">Your sources <span aria-hidden="true">↗</span></button>
+      </div>
+    </header>
+    <div class="board-toolbar"><span id="board-label">Your conversations</span><span id="connection-status" role="status">Connecting…</span><button id="retry-desktop" class="quiet-button" hidden>Retry connection</button></div><aside id="demo-guide" class="demo-guide" hidden><span>DEMO / fictional conversations</span><p>Open a card to catch up. Hide it with ×, then Undo. Nothing here is your private data.</p><a href="./walkthrough.html">Take the 30-second tour ↗</a></aside>
+    <section id="board" class="board" aria-label="Pinned chats and latest project conversations" tabindex="-1"></section>
+    <section id="empty" class="empty" hidden><h2>A little breathing room.</h2><p id="empty-message">You’ve hidden everything on this shelf.</p><button id="restore-all" class="solid-button">Restore hidden conversations</button></section>
+    <footer class="footer"><span>Swipe sideways or use × to set a card aside. Your chats stay where they are.</span><span id="queue-label"></span><span id="snapshot-label">Snapshot mode</span></footer>
+    <div id="storage-warning" class="storage-warning" role="status" hidden></div>
+    <div id="toast" class="toast" role="status" hidden><span id="toast-message"></span><button id="undo-button">Undo</button><button id="toast-close" aria-label="Dismiss notification">×</button></div>
+  </main>
+  <dialog id="detail-dialog" class="dialog detail-dialog" aria-labelledby="detail-title">
+    <div class="dialog-top"><span id="detail-category" class="eyebrow"></span><button class="close-button" data-close aria-label="Close conversation details">×</button></div>
+    <h2 id="detail-title"></h2>
+    <div id="approval-detail" class="approval-detail" hidden><strong>Approval review</strong><p id="approval-summary"></p><small id="approval-date"></small></div>
+    <div class="detail-section"><h3 id="detail-summary-label">Where you left off</h3><p id="detail-summary"></p></div>
+    <div class="detail-section"><h3>Your next step</h3><p id="detail-next"></p></div>
+    <details id="summary-source" class="summary-source"><summary>About this summary</summary><p id="detail-evidence" class="evidence"></p></details>
+    <div class="dialog-actions"><a id="open-chat" class="solid-button" target="_blank" rel="noopener noreferrer">Open original chat ↗</a><button id="hide-detail" class="outline-button">Hide from shelf</button></div>
+    <p id="no-link" class="help" hidden>No original chat link was supplied in this snapshot.</p>
+  </dialog>
+  <dialog id="hidden-dialog" class="dialog" aria-labelledby="hidden-title">
+    <div class="dialog-top"><span class="eyebrow">Set aside, still here</span><button class="close-button" data-close aria-label="Close hidden conversations">×</button></div>
+    <h2 id="hidden-title">Hidden conversations</h2><p class="help">Restore any chat to let it rejoin the shelf. A chat also returns when a newer snapshot reports an update or a changed approval.</p>
+    <div id="hidden-list" class="hidden-list"></div>
+  </dialog>
+  <dialog id="sources-dialog" class="dialog" aria-labelledby="sources-title">
+    <div class="dialog-top"><span class="eyebrow">Your data, your shelf</span><button class="close-button" data-close aria-label="Close sources">×</button></div>
+    <h2 id="sources-title">Your sources</h2>
+    <p id="source-label">Loading snapshot…</p>
+    <p id="source-description"></p><p id="coverage" class="help"></p>
+    <div class="source-note" id="source-note"><strong>Snapshot, not a live connection</strong><p>This version reads a saved list of conversations. It doesn’t connect to your account or execute approvals. Review requests in the original chat.</p></div>
+    <div id="browser-controls" hidden><label for="browser-tab">ChatGPT tab</label><select id="browser-tab"></select><p class="help">Discovers chats by expanding up to 25 sidebar projects automatically. Projects you collapse afterward stay closed until the page reloads. Unloaded conversation messages are still unavailable. The last capture stays available until Chrome closes. No AI subscription is connected yet.</p><button id="clear-browser" class="text-button">Clear captured excerpts</button></div>
+    <p id="desktop-source-info" class="help" hidden></p><div class="source-options"><button id="use-desktop" class="outline-button" hidden>Use desktop connection</button><button id="use-browser" class="outline-button" hidden>Use browser connection</button><button id="use-local" class="outline-button" hidden>Use local snapshot</button><button id="use-demo" class="outline-button">Try the fictional demo</button><label class="solid-button import-label">Import thread pickup snapshot<input id="import-file" type="file" accept=".json,application/json"></label></div>
+    <p id="import-error" class="error" role="alert" hidden></p>
+    <p class="help">Imports stay in this browser. Use the thread pickup format; raw ChatGPT exports aren’t supported yet. <a href="./demo.json" download="pick-up-example.json">Download an example</a>.</p>
+    <p class="help" id="selection-help">Pins come first, plus the latest available conversation per project. Waiting approvals rise to the top. Hiding a card makes room for the next eligible one.</p>
+    <button id="forget-import" class="text-button" hidden>Remove imported data from this browser</button>
+  </dialog>
+  <noscript>thread pickup needs JavaScript to display and arrange your conversations.</noscript>
+</body>
+</html>

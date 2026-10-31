@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "thread pickup — connection preview",
+  "version": "0.3.0",
+  "description": "An automatic, local shelf of pinned and project chats visible in your ChatGPT browser tab.",
+  "minimum_chrome_version": "112",
+  "permissions": ["storage"],
+  "background": {"service_worker": "background.js", "type": "module"},
+  "action": {"default_title": "Open thread pickup"},
+  "content_scripts": [{
+    "matches": ["https://chatgpt.com/*"],
+    "exclude_matches": ["https://chatgpt.com/auth/*", "https://chatgpt.com/share/*"],
+    "js": ["discovery.js", "capture.js", "observe.js"],
+    "run_at": "document_idle"
+  }],
+  "content_security_policy": {"extension_pages": "script-src 'self'; object-src 'none'; connect-src 'self'"}
+}

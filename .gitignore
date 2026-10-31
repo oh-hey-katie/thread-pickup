@@ -1,0 +1,15 @@
+.private/
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+extension-dist/
+coverage/
+.DS_Store
+*.log
+.playwright/
+test-results/
+screenshots/
+release/
+._*
